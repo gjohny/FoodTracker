@@ -3,8 +3,8 @@ from flask_login import login_required, current_user
 from .models import *
 from . import db
 import json
-from datetime import datetime, timedelta
-from sqlalchemy import and_, extract
+from datetime import datetime
+from sqlalchemy import and_
 
 views = Blueprint('views', __name__)
 
@@ -85,7 +85,7 @@ def logfood():
         try:
             db.session.add(log_add)
             db.session.commit()
-            m = f"\"{food_to_log}\" was sucessfully logged for {curr_date.strftime("%B-%d ")}"
+            m = f"\"{food_to_log}\" was sucessfully logged for {curr_date.strftime("%B-%d ") }"
             flash(m, category='success')
             return redirect("/")
         except Exception as e:
