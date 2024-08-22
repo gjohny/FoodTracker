@@ -8,7 +8,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'secret_user_key'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'{'postgresql://default:jJx2GPQWH9Yg@ep-silent-butterfly-a4hqfavj-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require'}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://default:jJx2GPQWH9Yg@ep-silent-butterfly-a4hqfavj-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require'
     db.init_app(app)
 
 
