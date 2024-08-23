@@ -56,7 +56,7 @@ def createfood():
         protein_ = request.form.get('protein')
         carbs = request.form.get('carbs')
         fat = request.form.get('fat')
-        new_food = Food(calories = cals,name=food_name,  protien=protein_,carbs=carbs,fat=fat)
+        new_food = Food(calories = cals,name=food_name,  protien=protein_,carbs=carbs,fat=fat, user_id = current_user.id)
         try:
             db.session.add(new_food)
             db.session.commit()

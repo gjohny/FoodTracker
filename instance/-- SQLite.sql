@@ -1,3 +1,0 @@
--- SQLite
--- ALTER TABLE Log
---     ADD food_logged INT
