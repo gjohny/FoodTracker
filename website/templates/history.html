@@ -41,7 +41,7 @@ content %}
         <th scope="row">{{l.date.strftime("%B %d ")}}</th>
         <td>{{l.food.name}}</td>
         <td style="word-wrap: break-word; min-width: 160px; max-width: 160px">
-          {{l.food.calories * l.servings}}
+          {{int(l.food.calories) * l.servings}}
         </td>
         <td>{{l.food.protien * l.servings}}</td>
         <td>{{l.food.carbs * l.servings}}</td>

@@ -3,11 +3,11 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 from datetime import datetime
 
-class Note(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    data = db.Column(db.String)
-    date = db.Column(db.DateTime(timezone=True), default=func.now())
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+# class Note(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     data = db.Column(db.String)
+#     date = db.Column(db.DateTime(timezone=True), default=func.now())
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
 class User(db.Model, UserMixin):
@@ -25,14 +25,14 @@ class User(db.Model, UserMixin):
     notes = db.relationship('Note')
     logs = db.relationship('Log', backref='user')
 
-class Meal(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    calories = db.Column(db.Integer)
-    protien = db.Column(db.String)
-    carbs = db.Column(db.String)
-    fat = db.Column(db.String)
-    # foods = db.relationship('Food')
+# class Meal(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#     calories = db.Column(db.Integer)
+#     protien = db.Column(db.String)
+#     carbs = db.Column(db.String)
+#     fat = db.Column(db.String)
+#     foods = db.relationship('Food')
 
 class Food(db.Model):
     __tablename__ = "food"
