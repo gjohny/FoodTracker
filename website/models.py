@@ -39,7 +39,7 @@ class Food(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     name = db.Column(db.String)
-    calories = db.Column(db.String)
+    calories = db.Column(db.Integer)
     protien = db.Column(db.Integer)
     carbs = db.Column(db.Integer)
     fat = db.Column(db.Integer)
